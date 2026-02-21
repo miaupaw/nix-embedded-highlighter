@@ -6,3 +6,7 @@ GEMINI.md
 final-answer.png
 images/icon.svg
 *.vsix
+tmp/**
+tmp/
+node_modules/**
+.vscodeignore

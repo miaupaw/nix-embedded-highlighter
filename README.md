@@ -7,6 +7,11 @@ A lightweight VS Code / VSCodium extension that brings **native syntax highlight
 
 Designed for the **Digital Phoenix** ecosystem, built for Nixers who are tired of looking at grey walls of text in their `shellHook`, `extraConfig`, or `runCommand` blocks.
 
+![Nix Embedded Highlighter in Action](images/screenshot.png)
+
+## Requirements
+This extension requires the standard [Nix IDE](https://marketplace.visualstudio.com/items?itemName=jnoortheen.nix-ide) to be installed, as it injects its rules directly into `string.quoted.other.nix`.
+
 ## How it works
 
 Just drop a comment language tag immediately after the opening `''` in your Nix file. The extension uses [TextMate Grammar Injections](https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide#injection-grammars) to overlay the correct syntax highlighting without breaking the host Nix language scope.
@@ -45,6 +50,7 @@ It even works with nested multi-line strings generated natively by builders:
 ```nix
 myConfig = pkgs.writeText "config.yaml" '' # bash
     cat > $out << 'EOF'
+
     # yaml
     server:
       port: 8080
@@ -52,9 +58,6 @@ myConfig = pkgs.writeText "config.yaml" '' # bash
     EOF
 '';
 ```
-
-## Requirements
-This extension requires the standard [Nix IDE](https://marketplace.visualstudio.com/items?itemName=jnoortheen.nix-ide) to be installed, as it injects its rules directly into `string.quoted.other.nix`.
 
 ## Philosophy
 *Deceptive Simplicity.* The plugin consists of three core files and relies entirely on VS Code's native grammar engine. It does not spawn background processes or parse ASTs. It simply tells the editor how to interpret the text you were already writing.
