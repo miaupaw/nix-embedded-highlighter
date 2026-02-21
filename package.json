@@ -1,0 +1,29 @@
+{
+  "name": "nix-embedded-highlighter",
+  "displayName": "Nix Embedded Highlighter",
+  "description": "Injects syntax highlighting for bash, python, json, yaml into Nix strings",
+  "version": "0.0.1",
+  "publisher": "atomicspirit",
+  "icon": "images/icon.png",
+  "keywords": [
+    "nix",
+    "highlight",
+    "syntax",
+    "injection"
+  ],
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "scopeName": "nix.embedded.injection",
+        "path": "./syntaxes/injection.json",
+        "injectTo": ["source.nix"]
+      }
+    ]
+  }
+}

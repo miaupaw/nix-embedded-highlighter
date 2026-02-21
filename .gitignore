@@ -1,0 +1,13 @@
+# Build artifacts
+*.vsix
+result
+
+# Nix
+.direnv
+
+# Node (vsce build)
+node_modules/
+
+# Local workspace context and temporary files
+GEMINI.md
+tmp/

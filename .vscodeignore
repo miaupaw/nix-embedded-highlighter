@@ -1,0 +1,8 @@
+.git
+.gitignore
+flake.nix
+flake.lock
+GEMINI.md
+final-answer.png
+images/icon.svg
+*.vsix

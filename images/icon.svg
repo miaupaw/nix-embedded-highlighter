@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+    <defs>
+        <!-- Background dark void grid -->
+        <radialGradient id="bg-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#2a2e45" />
+            <stop offset="100%" stop-color="#0f111a" />
+        </radialGradient>
+
+        <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="2" fill="#313244" opacity="0.6" />
+        </pattern>
+
+        <!-- The core "Lambda" segment -->
+        <!-- Each lambda represents a different language parsing layer -->
+        <g id="neon-lambda" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Main stroke (Top to Bottom-Right) -->
+            <line x1="0" y1="-50" x2="35" y2="70" fill="none" />
+            <!-- Short leg (Intersection to Bottom-Left) -->
+            <line x1="14.6" y1="0" x2="-35" y2="70" fill="none" />
+            <!-- "Node" head of the lambda -->
+            <circle cx="0" cy="-50" r="12" stroke="none" />
+        </g>
+
+        <!-- Cyberpunk Glow Filter -->
+        <filter id="cyber-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <!-- Soft inner glow -->
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur1" />
+            <!-- Wide neon aura -->
+            <feGaussianBlur in="SourceGraphic" stdDeviation="16" result="blur2" />
+            
+            <feMerge>
+                <feMergeNode in="blur2" />
+                <feMergeNode in="blur1" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- Base Squircle -->
+    <rect x="16" y="16" width="480" height="480" rx="100" fill="url(#bg-glow)" />
+    <rect x="16" y="16" width="480" height="480" rx="100" fill="url(#grid)" />
+    
+    <!-- Central Hexagonal Circuit Overlay -->
+    <g transform="translate(256, 256)" stroke-width="2" stroke="rgba(255,255,255,0.08)" fill="none">
+        <circle cx="0" cy="0" r="40" />
+        <circle cx="0" cy="0" r="100" stroke-dasharray="10 20" stroke-width="4" />
+        <circle cx="0" cy="0" r="180" stroke-dasharray="4 8" />
+        <polygon points="0,-180 155.88,-90 155.88,90 0,180 -155.88,90 -155.88,-90" stroke-dasharray="2 12" />
+    </g>
+
+    <!-- The 6 Lambdas forming the Nix Snowflake -->
+    <!-- Blended together with 'mix-blend-mode: screen' to create intense white-hot cores at intersections -->
+    <g transform="translate(256, 256) scale(1.35)" filter="url(#cyber-glow)" style="mix-blend-mode: screen;">
+        <!-- Rotate mathematically correct: 0, 60, 120, 180, 240, 300 -->
+        
+        <!-- Red (Ruby/Errors) -->
+        <use href="#neon-lambda" transform="rotate(0) translate(0, 50)" stroke="#F7768E" fill="#F7768E" />
+        
+        <!-- Orange (Rust/Constants) -->
+        <use href="#neon-lambda" transform="rotate(60) translate(0, 50)" stroke="#FF9E64" fill="#FF9E64" />
+        
+        <!-- Yellow (JS/Strings) -->
+        <use href="#neon-lambda" transform="rotate(120) translate(0, 50)" stroke="#E0AF68" fill="#E0AF68" />
+        
+        <!-- Green (Bash/Comments) -->
+        <use href="#neon-lambda" transform="rotate(180) translate(0, 50)" stroke="#9ECE6A" fill="#9ECE6A" />
+        
+        <!-- Cyan (Nix/Builtins) -->
+        <use href="#neon-lambda" transform="rotate(240) translate(0, 50)" stroke="#7DCFFF" fill="#7DCFFF" />
+        
+        <!-- Purple (Python/Types) -->
+        <use href="#neon-lambda" transform="rotate(300) translate(0, 50)" stroke="#BB9AF7" fill="#BB9AF7" />
+    </g>
+
+    <!-- Inner Core Spark -->
+    <circle cx="256" cy="256" r="6" fill="#FFFFFF" filter="url(#cyber-glow)" />
+    
+    <!-- Outer glassmorphism glossy border -->
+    <rect x="16" y="16" width="480" height="480" rx="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="4" />
+</svg>
