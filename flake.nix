@@ -16,11 +16,13 @@
           buildInputs = with pkgs; [
             nodejs_22
             vsce
+            ovsx
           ];
 
           shellHook = '' # bash
             echo "VS Code Extension Dev Environment"
             echo "Run 'vsce package' to build the extension."
+            echo "Run 'ovsx publish' to release to Open VSX."
           '';
         };
 
