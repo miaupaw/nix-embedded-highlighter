@@ -5,6 +5,10 @@
   "version": "0.0.1",
   "publisher": "atomicspirit",
   "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miaupaw/nix-embedded-highlighter.git"
+  },
   "keywords": [
     "nix",
     "highlight",
