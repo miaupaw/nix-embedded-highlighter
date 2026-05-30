@@ -46,8 +46,11 @@ shellHook = '' # bash
 | `# xml`         | `text.xml`          | libvirt domains, systemd units                |
 | `<!-- xml -->`   | `text.xml`          | alternative XML block tag                     |
 | `# sql`         | `source.sql`        | NixOS PostgreSQL modules                      |
+| `-- sql`        | `source.sql`        | alternative SQL line comment tag              |
 | `# lua`         | `source.lua`        | Neovim configurations                         |
+| `-- lua`        | `source.lua`        | alternative Lua line comment tag              |
 | `# javascript`  | `source.js`         | `writeScript`, node packages                  |
+| `// javascript` | `source.js`         | alternative JS line comment tag               |
 | `# ini`         | `source.ini`        | systemd units, config files                   |
 | `# perl`        | `source.perl`       | nixpkgs internals                             |
 
