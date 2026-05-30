@@ -25,9 +25,19 @@
           '';
         };
 
+        packages.hello-js = pkgs.writeText "hello.js" '' // javascript
+          const greet = (name) => {
+            const msg = `Hello, ''${name}!`;
+            console.log(msg);
+            return msg;
+          };
+
+          greet("Nix");
+        '';
+
         packages.default = pkgs.stdenv.mkDerivation {
           pname = "nix-embedded-highlighter";
-          version = "0.1.2";
+          version = "0.1.3";
           src = ./.;
 
           nativeBuildInputs = [ pkgs.nodejs_22 pkgs.vsce ];
@@ -35,7 +45,7 @@
           buildPhase = '' # bash
             # vsce needs a package.json to work
             # We skip 'npm install' because we have no dependencies yet
-            vsce package --out nix-embedded-highlighter-0.1.2.vsix
+            vsce package --out nix-embedded-highlighter-0.1.3.vsix
           '';
           installPhase = '' # bash
             mkdir -p $out/share/vscode/extensions

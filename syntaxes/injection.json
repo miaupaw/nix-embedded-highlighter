@@ -55,7 +55,7 @@
             "patterns": [{ "include": "source.yaml" }]
         },
         "html-block": {
-            "begin": "(#\\s*html|<!--\\s*html\\s*-->)\\s*$",
+            "begin": "<!--\\s*html\\s*-->\\s*$",
             "while": "^(?!.*''(?![\\$'\\\\]))",
             "beginCaptures": {
                 "0": { "name": "comment.line.injection-tag.nix" }
@@ -64,7 +64,7 @@
             "patterns": [{ "include": "text.html.basic" }]
         },
         "xml-block": {
-            "begin": "(#\\s*xml|<!--\\s*xml\\s*-->)\\s*$",
+            "begin": "<!--\\s*xml\\s*-->\\s*$",
             "while": "^(?!.*''(?![\\$'\\\\]))",
             "beginCaptures": {
                 "0": { "name": "comment.line.injection-tag.nix" }
@@ -73,7 +73,7 @@
             "patterns": [{ "include": "text.xml" }]
         },
         "css-block": {
-            "begin": "(#\\s*css|/\\*\\s*css\\s*\\*/)\\s*$",
+            "begin": "/\\*\\s*css\\s*\\*/\\s*$",
             "while": "^(?!.*''(?![\\$'\\\\]))",
             "beginCaptures": {
                 "0": { "name": "comment.line.injection-tag.nix" }
@@ -100,7 +100,7 @@
             "patterns": [{ "include": "source.toml" }]
         },
         "sql-block": {
-            "begin": "(#\\s*sql|--\\s*sql)\\s*$",
+            "begin": "--\\s*sql\\s*$",
             "while": "^(?!.*''(?![\\$'\\\\]))",
             "beginCaptures": {
                 "0": { "name": "comment.line.injection-tag.nix" }
@@ -109,7 +109,7 @@
             "patterns": [{ "include": "source.sql" }]
         },
         "lua-block": {
-            "begin": "(#\\s*lua|--\\s*lua)\\s*$",
+            "begin": "--\\s*lua\\s*$",
             "while": "^(?!.*''(?![\\$'\\\\]))",
             "beginCaptures": {
                 "0": { "name": "comment.line.injection-tag.nix" }
@@ -118,7 +118,7 @@
             "patterns": [{ "include": "source.lua" }]
         },
         "javascript-block": {
-            "begin": "(#\\s*javascript|//\\s*javascript)\\s*$",
+            "begin": "//\\s*(javascript|js)\\s*$",
             "while": "^(?!.*''(?![\\$'\\\\]))",
             "beginCaptures": {
                 "0": { "name": "comment.line.injection-tag.nix" }

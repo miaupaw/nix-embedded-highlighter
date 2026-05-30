@@ -39,18 +39,13 @@ shellHook = '' # bash
 | `# json`        | `source.json`       | generating `.json` config files               |
 | `# toml`        | `source.toml`       | `Cargo.toml`, `pyproject.toml` via writeText  |
 | `# yaml`        | `source.yaml`       | generating `.yml` config files                |
-| `# css`         | `source.css`        | inline styles                                 |
-| `/* css */`     | `source.css`        | alternative CSS block tag                     |
-| `# html`        | `text.html.basic`   | `nginx` extra configurations                  |
-| `<!-- html -->`  | `text.html.basic`   | alternative HTML block tag                    |
-| `# xml`         | `text.xml`          | libvirt domains, systemd units                |
-| `<!-- xml -->`   | `text.xml`          | alternative XML block tag                     |
-| `# sql`         | `source.sql`        | NixOS PostgreSQL modules                      |
-| `-- sql`        | `source.sql`        | alternative SQL line comment tag              |
-| `# lua`         | `source.lua`        | Neovim configurations                         |
-| `-- lua`        | `source.lua`        | alternative Lua line comment tag              |
-| `# javascript`  | `source.js`         | `writeScript`, node packages                  |
-| `// javascript` | `source.js`         | alternative JS line comment tag               |
+| `/* css */`     | `source.css`        | inline styles                                 |
+| `<!-- html -->` | `text.html.basic`   | `nginx` extra configurations                  |
+| `<!-- xml -->`  | `text.xml`          | libvirt domains, systemd units                |
+| `-- sql`        | `source.sql`        | NixOS PostgreSQL modules                      |
+| `-- lua`        | `source.lua`        | Neovim configurations                         |
+| `// javascript` | `source.js`         | `writeScript`, node packages                  |
+| `// js`         | `source.js`         | short alias                                   |
 | `# ini`         | `source.ini`        | systemd units, config files                   |
 | `# perl`        | `source.perl`       | nixpkgs internals                             |
 
