@@ -1,5 +1,7 @@
 .git
 .gitignore
+.envrc
+.direnv/
 flake.nix
 flake.lock
 GEMINI.md

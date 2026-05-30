@@ -4,11 +4,18 @@
     "patterns": [
         { "include": "#bash-block" },
         { "include": "#python-block" },
+        { "include": "#ruby-block" },
         { "include": "#json-block" },
+        { "include": "#toml-block" },
         { "include": "#yaml-block" },
         { "include": "#html-block" },
         { "include": "#xml-block" },
-        { "include": "#css-block" }
+        { "include": "#css-block" },
+        { "include": "#sql-block" },
+        { "include": "#lua-block" },
+        { "include": "#javascript-block" },
+        { "include": "#ini-block" },
+        { "include": "#perl-block" }
     ],
     "repository": {
         "bash-block": {
@@ -73,6 +80,69 @@
             },
             "contentName": "meta.embedded.block.css",
             "patterns": [{ "include": "source.css" }]
+        },
+        "ruby-block": {
+            "begin": "#\\s*ruby\\s*$",
+            "while": "^(?!.*''(?![\\$'\\\\]))",
+            "beginCaptures": {
+                "0": { "name": "comment.line.injection-tag.nix" }
+            },
+            "contentName": "meta.embedded.block.ruby",
+            "patterns": [{ "include": "source.ruby" }]
+        },
+        "toml-block": {
+            "begin": "#\\s*toml\\s*$",
+            "while": "^(?!.*''(?![\\$'\\\\]))",
+            "beginCaptures": {
+                "0": { "name": "comment.line.injection-tag.nix" }
+            },
+            "contentName": "meta.embedded.block.toml",
+            "patterns": [{ "include": "source.toml" }]
+        },
+        "sql-block": {
+            "begin": "#\\s*sql\\s*$",
+            "while": "^(?!.*''(?![\\$'\\\\]))",
+            "beginCaptures": {
+                "0": { "name": "comment.line.injection-tag.nix" }
+            },
+            "contentName": "meta.embedded.block.sql",
+            "patterns": [{ "include": "source.sql" }]
+        },
+        "lua-block": {
+            "begin": "#\\s*lua\\s*$",
+            "while": "^(?!.*''(?![\\$'\\\\]))",
+            "beginCaptures": {
+                "0": { "name": "comment.line.injection-tag.nix" }
+            },
+            "contentName": "meta.embedded.block.lua",
+            "patterns": [{ "include": "source.lua" }]
+        },
+        "javascript-block": {
+            "begin": "#\\s*javascript\\s*$",
+            "while": "^(?!.*''(?![\\$'\\\\]))",
+            "beginCaptures": {
+                "0": { "name": "comment.line.injection-tag.nix" }
+            },
+            "contentName": "meta.embedded.block.js",
+            "patterns": [{ "include": "source.js" }]
+        },
+        "ini-block": {
+            "begin": "#\\s*ini\\s*$",
+            "while": "^(?!.*''(?![\\$'\\\\]))",
+            "beginCaptures": {
+                "0": { "name": "comment.line.injection-tag.nix" }
+            },
+            "contentName": "meta.embedded.block.ini",
+            "patterns": [{ "include": "source.ini" }]
+        },
+        "perl-block": {
+            "begin": "#\\s*perl\\s*$",
+            "while": "^(?!.*''(?![\\$'\\\\]))",
+            "beginCaptures": {
+                "0": { "name": "comment.line.injection-tag.nix" }
+            },
+            "contentName": "meta.embedded.block.perl",
+            "patterns": [{ "include": "source.perl" }]
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "name": "nix-embedded-highlighter",
   "displayName": "Nix Embedded Highlighter",
-  "description": "Injects syntax highlighting for bash, python, json, yaml into Nix strings",
-  "version": "0.0.1",
+  "description": "Injects syntax highlighting for bash, python, ruby, json, toml, yaml, html, xml, css, sql, lua, javascript, ini, perl into Nix strings",
+  "version": "0.1.0",
   "publisher": "atomicspirit",
   "icon": "images/icon.png",
   "repository": {
