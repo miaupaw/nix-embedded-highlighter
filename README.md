@@ -31,18 +31,25 @@ shellHook = '' # bash
 
 ## Supported Languages
 
-| Language Tag | Scope Injected      | Common Use Case                               |
-|--------------|---------------------|-----------------------------------------------|
-| `# bash`     | `source.shell`      | `shellHook`, `phases`, `pkgs.runCommand`      |
-| `# python`   | `source.python`     | `writers.writePython3`                        |
-| `# json`     | `source.json`       | generating `.json` config files               |
-| `# yaml`     | `source.yaml`       | generating `.yml` config files                |
-| `# css`      | `source.css`        | inline styles                                 |
-| `/* css */`  | `source.css`        | alternative CSS block tag                     |
-| `# html`     | `text.html.basic`   | `nginx` extra configurations                  |
-| `<!-- html -->`| `text.html.basic` | alternative HTML block tag                    |
-| `# xml`      | `text.xml`          | libvirt domains, systemd units                |
-| `<!-- xml -->` | `text.xml`          | alternative XML block tag                     |
+| Language Tag    | Scope Injected      | Common Use Case                               |
+|-----------------|---------------------|-----------------------------------------------|
+| `# bash`        | `source.shell`      | `shellHook`, `phases`, `pkgs.runCommand`      |
+| `# python`      | `source.python`     | `writers.writePython3`                        |
+| `# ruby`        | `source.ruby`       | `bundlerEnv`, scripts                         |
+| `# json`        | `source.json`       | generating `.json` config files               |
+| `# toml`        | `source.toml`       | `Cargo.toml`, `pyproject.toml` via writeText  |
+| `# yaml`        | `source.yaml`       | generating `.yml` config files                |
+| `# css`         | `source.css`        | inline styles                                 |
+| `/* css */`     | `source.css`        | alternative CSS block tag                     |
+| `# html`        | `text.html.basic`   | `nginx` extra configurations                  |
+| `<!-- html -->`  | `text.html.basic`   | alternative HTML block tag                    |
+| `# xml`         | `text.xml`          | libvirt domains, systemd units                |
+| `<!-- xml -->`   | `text.xml`          | alternative XML block tag                     |
+| `# sql`         | `source.sql`        | NixOS PostgreSQL modules                      |
+| `# lua`         | `source.lua`        | Neovim configurations                         |
+| `# javascript`  | `source.js`         | `writeScript`, node packages                  |
+| `# ini`         | `source.ini`        | systemd units, config files                   |
+| `# perl`        | `source.perl`       | nixpkgs internals                             |
 
 ### Deep Nesting
 It even works with nested multi-line strings generated natively by builders:

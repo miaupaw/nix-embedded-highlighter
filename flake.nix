@@ -27,7 +27,7 @@
 
         packages.default = pkgs.stdenv.mkDerivation {
           pname = "nix-embedded-highlighter";
-          version = "0.1.0";
+          version = "0.1.1";
           src = ./.;
 
           nativeBuildInputs = [ pkgs.nodejs_22 pkgs.vsce ];
@@ -35,7 +35,7 @@
           buildPhase = '' # bash
             # vsce needs a package.json to work
             # We skip 'npm install' because we have no dependencies yet
-            vsce package --out nix-embedded-highlighter-0.1.0.vsix
+            vsce package --out nix-embedded-highlighter-0.1.1.vsix
           '';
           installPhase = '' # bash
             mkdir -p $out/share/vscode/extensions
